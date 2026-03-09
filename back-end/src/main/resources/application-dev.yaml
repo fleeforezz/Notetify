@@ -1,0 +1,41 @@
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+jwt:
+  secret: rP0Q3Q1hh2YEOjD9hrloTfhphgq2vK7SwT3ctd30YQw
+  expiration: 3600000 # 1 hour (ms)
+
+spring:
+  application:
+    name: notetify
+
+  datasource:
+    url: "jdbc:mysql://jsomysql.duckdns.org:32768/notetify"
+    # url: "jdbc:mysql://localhost:3306/DLS"
+    username: root
+    password: TMNNT012928637160822863716
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        "[format_sql]": true
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+# seaweedfs:
+#   master:
+#     url: https://master-seaweed.hikarimoon.pro
+#   filer:
+#     url: https://filer-seaweed.hikarimoon.pro

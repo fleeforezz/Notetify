@@ -1,12 +1,14 @@
-version: "3"
-
 services:
-  backend:
-    build: ./backend
+  notetify-backend:
+    build:
+      context: ./back-end
+      dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "8082:8082"
 
-  frontend:
-    build: ./frontend
+  notetify-frontend:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
